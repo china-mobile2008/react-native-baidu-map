@@ -93,16 +93,19 @@
 -(void)addMarker:(BMKPointAnnotation *)annotation option:(NSDictionary *)option {
     [self updateMarker:annotation option:option];
     [self addAnnotation:annotation];
+    [self selectAnnotation:annotation animated:YES];//这样就可以在初始化的时候将 气泡信息弹出
 }
 
 -(void)updateMarker:(BMKPointAnnotation *)annotation option:(NSDictionary *)option {
     CLLocationCoordinate2D coor = [self getCoorFromMarkerOption:option];
     NSString *title = [RCTConvert NSString:option[@"title"]];
+    NSString *address = [RCTConvert NSString:option[@"address"]];
     if(title.length == 0) {
         title = nil;
     }
     annotation.coordinate = coor;
     annotation.title = title;
+    annotation.subtitle = address;
 }
 
 

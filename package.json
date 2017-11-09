@@ -1,6 +1,6 @@
 {
   "name": "react-native-baidu-map-kit",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "react native baidu map kit",
   "main": "index.js",
   "scripts": {
